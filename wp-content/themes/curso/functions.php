@@ -36,12 +36,37 @@ function load_scripts()
  */
 add_action('wp_enqueue_scripts', 'load_scripts');
 
-/**
- * Registrando Menus
- */
-register_nav_menus(
-    array(
-        'main_menu' => 'Main Menu',
-        'footer_menu' => 'Footer menu'
-    )
-);
+
+function wpcurso_config()
+{
+    /**
+     * Registrando Menus
+     */
+    register_nav_menus(
+        array(
+            'main_menu' => 'Main Menu',
+            'footer_menu' => 'Footer menu'
+        )
+    );
+
+    /**
+     * Adicionando personalização de cabeçalho
+     */
+    $args = array(
+        'height'    => 225,
+        'width'     => 1920
+    );
+    add_theme_support('custom-header', $args);
+
+    /**
+     * Adicionando inclusão de thumnails para posts
+     */
+    add_theme_support( 'post-thumbnails' );
+    
+    /**
+     * Adicionando definição de formato de post
+     */
+    add_theme_support( 'post-formats', array( 'video', 'image' ) );
+}
+
+add_action( 'after_setup_theme', 'wpcurso_config', 0 );

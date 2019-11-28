@@ -1,3 +1,23 @@
-.social-media-icons { background: green; height: 30px;}
-.search { background: yellow; height: 30px; }
-.main-menu ul li, .footer-menu ul li { display: inline;}
+.social-media-icons {
+    background: green;
+    height: 30px;
+}
+
+.search {
+    background: yellow;
+    height: 30px;
+}
+
+.main-menu ul li,
+.footer-menu ul li {
+    display: inline;
+}
+
+.wp-post-image {
+    float: left;
+    margin: 0 15px 10px 0;
+}
+
+.blog article {
+    display: inline-block;
+}
