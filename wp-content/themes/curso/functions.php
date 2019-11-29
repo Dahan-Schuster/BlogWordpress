@@ -36,7 +36,9 @@ function load_scripts()
  */
 add_action('wp_enqueue_scripts', 'load_scripts');
 
-
+/**
+ * Configurando suportes do tema
+ */
 function wpcurso_config()
 {
     /**
