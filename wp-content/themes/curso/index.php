@@ -4,8 +4,10 @@
     <main>
         <section class="middle-area">
             <div class="row">
-                <aside class="sidebar col-md-4">Sidebar</aside>
-                <div class="news col-md-8">
+                <aside class="sidebar col-md-3 h-100">
+                    <?php get_sidebar('blog') ?>
+                </aside>
+                <div class="news col-md-9">
                     <?php
                     // Se houver um post...
                     if (have_posts()) :

@@ -5,8 +5,10 @@
         <section class="services">Serviços</section>
         <section class="middle-area">
             <div class="row">
-                <aside class="sidebar col-md-4">Sidebar</aside>
-                <div class="news col-md-8">
+                <aside class="sidebar col-md-3 h-100">
+                    <?php get_sidebar('home') ?>
+                </aside>
+                <div class="news col-md-9">
                     <h2>Página inicial</h2>
                     <hr>
                     <p>Esta é a página inicial do site</p>
