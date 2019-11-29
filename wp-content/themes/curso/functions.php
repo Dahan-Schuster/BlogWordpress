@@ -78,9 +78,9 @@ add_action('after_setup_theme', 'theme_config', 0);
 /*************************************************************/
 
 /**
- * Configurando o menu lateral
+ * Configurando os widgetes
  */
-function theme_sidebars()
+function theme_widgets()
 {
     # Sidebar Home
     register_sidebar(
@@ -107,7 +107,51 @@ function theme_sidebars()
             'after_title'   => '</h2>'
         )
     );
+
+    /**
+     * Área de serviços 
+     * */ 
+
+    # Widget 1
+    register_sidebar(
+        array(
+            'name'          => 'Services 1',
+            'id'            => 'services-1',
+            'description'   => 'First widget of Services area',
+            'before_widget' => '<div class="widget-wrapper">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>'
+        )
+    );
+
+    # Widget 2
+    register_sidebar(
+        array(
+            'name'          => 'Services 2',
+            'id'            => 'services-2',
+            'description'   => 'Second widget of Services area',
+            'before_widget' => '<div class="widget-wrapper">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>'
+        )
+    );
+
+    # Widget 3
+    register_sidebar(
+        array(
+            'name'          => 'Services 3',
+            'id'            => 'services-3',
+            'description'   => 'Third widget of Services area',
+            'before_widget' => '<div class="widget-wrapper">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>'
+        )
+    );
+
 }
 
 # Amarrando a rotina de configuração das sidebars ao gancho de inicialização dos widgets
-add_action('widgets_init', 'theme_sidebars');
+add_action('widgets_init', 'theme_widgets');
