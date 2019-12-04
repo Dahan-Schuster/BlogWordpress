@@ -1,5 +1,8 @@
 <article <?php post_class() ?>>
-    <h2><?php the_title() ?></h2>
+    <h2>
+        <?php the_title() ?>
+        <small><a href="<?php the_permalink() ?>">Leia mais</a></small>
+    </h2>
     <hr>
     <?php the_content() ?>
     <div class="meta-info">
