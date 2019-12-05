@@ -62,7 +62,7 @@ function theme_config()
     add_theme_support('custom-header', $args);
 
     /**
-     * Adicionando inclusão de thumnails para posts
+     * Adicionando inclusão de thumbnails para posts
      */
     add_theme_support('post-thumbnails');
 
@@ -106,6 +106,19 @@ function theme_widgets()
             'name'          => 'Blog Sidebar',
             'id'            => 'sidebar-blog',
             'description'   => 'Sidebar to be used on Posts Page',
+            'before_widget' => '<div class="widget-wrapper">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>'
+        )
+    );
+
+    # Redes Sociais
+    register_sidebar(
+        array(
+            'name'          => 'Social Media Icons',
+            'id'            => 'social-media',
+            'description'   => 'Social Media Icons widget',
             'before_widget' => '<div class="widget-wrapper">',
             'after_widget'  => '</div>',
             'before_title'  => '<h2 class="widget-title">',
