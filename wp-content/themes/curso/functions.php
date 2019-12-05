@@ -70,6 +70,11 @@ function theme_config()
      * Adicionando definição de formato de post
      */
     add_theme_support('post-formats', array('video', 'image'));
+
+    /**
+     * Definindo a tag title
+     */
+    add_theme_support('title-tag');
 }
 
 # Amarrando a rotina de configuração do tema ao gancho chamado após a inicialização
