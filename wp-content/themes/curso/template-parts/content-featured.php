@@ -5,7 +5,7 @@
     </h2>
     <hr>
     <div class="thumbnail">
-        <?php the_post_thumbnail('large', array('class' => 'img-fluid')) ?>
+        <?php the_post_thumbnail('large ', array('class' => 'img-fluid')) ?>
     </div>
     <div class="meta-info">
         <p>
@@ -15,6 +15,6 @@
         </p>
         <p><span><?= get_the_date() ?></span></p>
     </div>
-    <?php the_content() ?>
+    <?php the_excerpt() ?>
     <hr class="mb-5">
 </article>
