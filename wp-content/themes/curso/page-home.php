@@ -1,7 +1,9 @@
 <?php get_header() ?>
 <div class="content-area">
     <main>
-        <section class="slides">Slides</section>
+        <section class="slides">
+            <?= do_shortcode('[recent_post_slider design="design-4" limit=3]') ?>
+        </section>
         <section class="services">
             <div class="row text-center">
                 <h1 class="col-12">Our Services</h1>
