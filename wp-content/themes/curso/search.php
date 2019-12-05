@@ -21,6 +21,16 @@
                     comments_template();
                 endif;
             endwhile;
+
+            the_posts_pagination(
+                array(
+                    'mid_size' => 2,
+                    'prev_text' => 'Previous',
+                    'next_text' => 'Next',
+                    'screen_reader_text' => 'Navigation: '
+                )
+            );
+
             ?>
         </div>
     </div>
