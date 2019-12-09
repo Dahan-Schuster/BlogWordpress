@@ -1,27 +1,16 @@
 <?php
 /**
- * The searchform.php template.
- *
- * Used any time that get_search_form() is called.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * Template for displaying search forms in Twenty Sixteen
  *
  * @package WordPress
- * @subpackage Twenty_Twenty
- * @since 1.0.0
+ * @subpackage Twenty_Sixteen
+ * @since Twenty Sixteen 1.0
  */
-
-/*
- * Generate a unique ID for each form and a string containing an aria-label if
- * one was passed to get_search_form() in the args array.
- */
-$unique_id = wp_unique_id( 'search-form-' );
-
-$aria_label = ! empty( $args['label'] ) ? 'aria-label="' . esc_attr( $args['label'] ) . '"' : '';
 ?>
-<form role="search" <?php echo $aria_label; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped above. ?> method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-	<label for="<?php echo esc_attr( $unique_id ); ?>">
-		<input type="search" id="<?php echo esc_attr( $unique_id ); ?>" class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+
+<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+	<label>
+		<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'wpcurso' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
 	</label>
-	<input type="submit" class="search-submit" value="<?php echo esc_attr_x( 'Search', 'submit button' ); ?>" />
+	<button type="submit" class="search-submit"><span class="screen-reader-text"><?php echo _x( 'OK', 'submit button', 'wpcurso' ); ?></span></button>
 </form>

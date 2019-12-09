@@ -8,25 +8,27 @@ Template name: Modelo geral
 <div class="content-area">
     <main>
         <section class="middle-area">
-            <div class="general-template">
-                <?php
-                // Se houver um post...
-                if (have_posts()) :
-                    // mostre o post enquanto houverem posts
-                    while (have_posts()) : the_post();
-                        ?>
-                        <article>
-                            <h2><?php the_title() ?></h2>
-                            <hr>
-                            <?php the_content() ?>
-                        </article>
+            <div class="container">
+                <div class="general-template">
                     <?php
-                        endwhile;
+                    // Se houver um post...
+                    if (have_posts()) :
+                        // mostre o post enquanto houverem posts
+                        while (have_posts()) : the_post();
+                            ?>
+                            <article>
+                                <h2><?php the_title() ?></h2>
+                                <hr>
+                                <?php the_content() ?>
+                            </article>
+                        <?php
+                            endwhile;
 
-                    else :
-                        ?>
-                    <p>Sorry... There's no posts to be displayed at the moment :/</p>
-                <?php endif; ?>
+                        else :
+                            ?>
+                        <p>Sorry... There's no posts to be displayed at the moment :/</p>
+                    <?php endif; ?>
+                </div>
             </div>
         </section>
     </main>
