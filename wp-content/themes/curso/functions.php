@@ -1,5 +1,8 @@
 <?php
 
+/* Carregando o arquivo Customizer */
+require get_template_directory('/inc/customizer.php');
+
 /**
  * Carregando folhas de estilo e scripts js
  */
