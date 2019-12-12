@@ -15,8 +15,13 @@
  * Ao mexer em um Controle, o objeto Settings é enviado do PHP para o Js da página
  * ao vivo. O Js então maniupula o objeto settings e carrega a visualização em tempo real.
  * 
+ * Section¹ -[possui]-> Control¹ -[possui]-> Settings²
+ * 
+ * ¹: ELemento visual
+ * ²: Configurações abstratas
+ * 
  * O método abaixo adiciona alguns painéis de controles ao Theme Customizer.
- * Para funcionar, deve ser chamado (require()) dentro de um arquivo autocarregado do WP (como o functions.php)
+ * Para funcionar, deve ser chamado (require()) dentro de um arquivo autocarregado pelo WP (como o functions.php)
  * 
  * Mais informações em: https://developer.wordpress.org/themes/customize-api/customizer-objects/
  * 
@@ -53,13 +58,15 @@ function wp_customizer($wp_customize)
         )
     );
 
+    // Cria um objeto Control que conterá um objeto Settings (parâmetro 1)
+    // e pertecenrá a um objeto Section (chave 'section' do parâmetro 2)
     $wp_customize->add_control(
         'set_copyright',    // id da configuração a qual o controle está associado
         array(
-            'label' => 'Copyright',
-            'description' => 'Choose wheter to show the Services section or not',
+            'label' => 'Copyright', // Rótulo do controle. Ajuda a identificar o controle
+            'description' => 'Choose wheter to show the Services section or not', // Indica ao usuário para que serve o controle
             'section' => 'sec_copyright', // Seção em que o controle deve ficar
-            'type' => 'text'
+            'type' => 'text' // Tipo do campo em que o usuário deverá enviar informações (input). Neste caso, o input é do tipo text, pois estamos configurando a seção de Copyright da página.
         )
     );
 }
