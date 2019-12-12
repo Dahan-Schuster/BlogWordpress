@@ -318,7 +318,7 @@ function get_template() {
  *
  * @return string Template directory path.
  */
-function get_template_directory() {
+function get_template_directory($include_path = null) {
 	$template     = get_template();
 	$theme_root   = get_theme_root( $template );
 	$template_dir = "$theme_root/$template";
@@ -332,7 +332,10 @@ function get_template_directory() {
 	 * @param string $template     Directory name of the current theme.
 	 * @param string $theme_root   Absolute path to the themes directory.
 	 */
-	return apply_filters( 'template_directory', $template_dir, $template, $theme_root );
+	$output = apply_filters( 'template_directory', $template_dir, $template, $theme_root );
+	if ($include_path)
+		$output .= "/$include_path";
+	return $output;
 }
 
 /**
